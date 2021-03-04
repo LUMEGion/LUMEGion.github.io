@@ -137,6 +137,8 @@ function start() {
     visualize(stream);
 
     record.onclick = function () {
+      audioInputSelect.disabled = true;
+      
       mediaRecorder.start();
       console.log(mediaRecorder.state);
       console.log("recorder started");
@@ -147,6 +149,8 @@ function start() {
     };
 
     stop.onclick = function () {
+      audioInputSelect.disabled = false;
+
       mediaRecorder.stop();
       console.log(mediaRecorder.state);
       console.log("recorder stopped");
